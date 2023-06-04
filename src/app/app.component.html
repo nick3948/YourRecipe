@@ -1,7 +1,9 @@
+<app-header (flag)="onTrigger($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2>Im working dude!</h2>
+      <app-recipes *ngIf="value === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="value !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>

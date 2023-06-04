@@ -5,4 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+  value: string = 'recipe';
+  onTrigger(flag: string) {
+    this.value = flag;
+  }
+}
