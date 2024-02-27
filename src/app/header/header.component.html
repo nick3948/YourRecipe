@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #bbdbf3;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipe Book</a>
+    <a class="navbar-brand" (click)="onClick('recipe')" href="#">Planon</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,23 +8,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a (click)="onClick('recipe')" class="nav-link" href="#">Recipes</a>
+          <a class="nav-link" target="_blank" href="https://www.planon.app/knowledgebase/">Dev Portal</a>
         </li>
         <li class="nav-item">
-          <a (click)="onClick('shopping')" class="nav-link" href="#">Shopping List</a>
+          <a class="nav-link" target="_blank" href="https://planongroup.sharepoint.com/sites/Intouch-Home">Intouch
+            KB</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" l data-bs-toggle="dropdown" aria-expanded="false">
-            Manage
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        <li class="nav-item">
+          <a (click)="onClick('shopping')" class="nav-link" href="#">To-Do</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

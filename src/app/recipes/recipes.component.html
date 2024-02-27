@@ -1,11 +1,18 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list (recipeSelected)="selectedItem = $event"></app-recipe-list>
+    <app-recipe-list></app-recipe-list>
   </div>
   <div class="col-md-5">
     <app-recipe-detail *ngIf="selectedItem; else InfoTemplate" [recipe]="selectedItem"></app-recipe-detail>
     <ng-template #InfoTemplate>
-      <p>No recipe was selected!</p>
+
     </ng-template>
+    <div class="container">
+      <iframe class="media"
+        src="https://planongroup-my.sharepoint.com/personal/sagar_singh_planonsoftware_com/_layouts/15/embed.aspx?UniqueId=97fb4674-9b94-4785-8777-0facb7ddab89&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
+        width="840" height="560" scrolling="no" allowfullscreen frameborder="0"
+        title="KT- PEET Custom worker-20220325_141348-Meeting Recording.mp4">
+      </iframe>
+    </div>
   </div>
 </div>
