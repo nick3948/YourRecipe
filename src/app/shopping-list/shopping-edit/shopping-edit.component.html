@@ -1,24 +1,54 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-xs-12">
-        <form>
-            <div class="row">
-                <div class="col-sm-5 form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="" id="name" class="form-control" #nameInput>
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="quantity">Quantity</label>
-                    <input type="number" name="" id="quantity" class="form-control" #quantityInput>
+        <form class="row needs-validation">
+            <div class="col-sm-5 form-group">
+                <label for="name">Task</label>
+                <input type="text" name="name" id="name" class="form-control" required #nameInput>
+            </div>
+            <div class="col-sm-2 form-group">
+                <label for="quantity" class="form-label">Priority</label>
+                <input type="number" name="" id="quantity" class="form-control" min="0" max="3" #quantityInput>
+                <select class="form-select" id="quantity" required #quantityInput>
+                    <option selected disabled value="">Choose...</option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+                <div class="invalid-tooltip">
+                    Please select a valid priority.
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-xs-12">
                     <button class="btn btn-success" (click)="onAddClick()" type="submit">Add</button>&nbsp;
-                    <button class="btn btn-danger" type="submit">Delete</button>&nbsp;
-                    <button class="btn btn-primary" type="submit">Clear</button>
+                    <button class="btn btn-danger" (click)="onDeleteClick()" type="button">Delete</button>&nbsp;
+                    <button class="btn btn-primary" (click)="onClearClick()" type="button">Clear</button>
                 </div>
             </div>
         </form>
     </div>
-</div>
+</div> -->
+
+<form class="row g-3 needs-validation" novalidate [formGroup]="myForm" [class.was-validated]="!myForm.pristine">
+    <div class="col-md-4">
+        <label for="name" class="form-label">Task</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+    <div class="col-md-4">
+        <label for="quantity" class="form-label">Priority</label>
+        <select class="form-select" id="quantity" formControlName="quantity" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <div class="invalid-feedback">
+            Please select a valid priority.
+        </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled]="myForm.invalid">Submit
+            form</button>
+    </div>
+</form>
